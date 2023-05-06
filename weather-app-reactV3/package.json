@@ -1,0 +1,25 @@
+{
+  "homepage": "https://github.com/kumrajbiz/WeatherAppwWthRect_Microservice.git",
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "This is Weather App powered by Reacr",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Rajesh kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^5.0.0",
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.23",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
