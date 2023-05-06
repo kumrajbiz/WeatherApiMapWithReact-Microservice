@@ -1,0 +1,4 @@
+com/java/net/controller/WeatherController.class
+com/java/net/WeatherMapApIv2MocroserviceApplication.class
+com/java/net/service/WeatherService.class
+com/java/net/entity/Weather.class
