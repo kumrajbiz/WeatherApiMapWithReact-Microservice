@@ -1,8 +1,8 @@
-server.port: 8088
+server.port: 8888
 
 spring:
   application:
-    name: OPEN_WEATHER_API_V2
+    name: WEATHER_CLIENT_V2
 eureka:
   client:
     register-with-eureka: true
