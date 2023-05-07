@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  service-registry:
+    image: kumrajbiz/service-registry:v4
+    ports:
+      - "8761:8761"
+    environment:
+      - EUREKA_CLIENT_REGISTER-WITH-EUREKA=false
+      - EUREKA_CLIENT_FETCH-REGISTRY=false
+  weather-map-api:
+    image: kumrajbiz/weathermap_api_ms:v5
+    ports:
+      - "8088:8088"
+    depends_on:
+      - service-registry
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
+      - EUREKA_CLIENT_REGISTER-WITH-EUREKA=true
+      - EUREKA_CLIENT_FETCH-REGISTRY=true
+  weather-map-client:
+    image: kumrajbiz/weathermap_client_ms:v4
+    ports:
+      - "8888:8888"
+    depends_on:
+      - weather-map-api
+      - service-registry
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://service-registry:8761/eureka/
+      - EUREKA_CLIENT_REGISTER-WITH-EUREKA=true
+      - EUREKA_CLIENT_FETCH-REGISTRY=true
+
