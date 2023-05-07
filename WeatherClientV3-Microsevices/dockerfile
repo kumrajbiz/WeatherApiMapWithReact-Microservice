@@ -1,0 +1,8 @@
+FROM openjdk:11
+LABEL "Developer"="Rajesh kumar"
+LABEL "Microservice"="Weather_Client_MS "
+WORKDIR /app
+COPY ./src/main/resources/application.yml /app/config/
+COPY target/WeatherClient-microsevices-0.0.1-SNAPSHOT.jar WeatherClient-microsevices-0.0.1-SNAPSHOT.jar
+EXPOSE 8888
+CMD ["java", "-jar", "WeatherClient-microsevices-0.0.1-SNAPSHOT.jar"]
