@@ -28,6 +28,7 @@ public class WeatherController {
     	 WeatherData weatherData = null;
     	try {
             weatherData = weatherService.currentService(location);
+		System.out.println("Data from Weather API "+weatherData.toString());
             return ResponseEntity.ok(weatherData);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(weatherData);
