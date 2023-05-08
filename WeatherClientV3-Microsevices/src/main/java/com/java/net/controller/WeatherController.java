@@ -19,8 +19,8 @@ import com.java.net.service.WeatherServiceimpl;
 
 @RestController
 @RequestMapping
-//for allowing react service to allow access
-@CrossOrigin(origins = "http://localhost:9999/")
+//@CrossOrigin(origins = "http://localhost:9999/")
+@CrossOrigin("*")
 public class WeatherController {
 
    
@@ -32,6 +32,7 @@ public class WeatherController {
     	WeatherData weather = null;
     	try {
     		weather = weatherService.getWeatherByLocation(location);
+		System.out.println("Data from Weather Client "+weather);
     		return ResponseEntity.ok(weather);
         } catch (Exception e) {
         	weather = new WeatherData();
