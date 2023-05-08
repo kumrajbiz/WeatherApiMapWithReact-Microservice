@@ -2,7 +2,7 @@ server.port: 8888
 
 spring:
   application:
-    name: WEATHER_CLIENT_V2
+    name: WEATHER_CLIENT_V5
 eureka:
   client:
     register-with-eureka: true
