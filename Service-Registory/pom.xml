@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>KumrajCorp</groupId>
-	<artifactId>A1Universal-ServiceRegistory</artifactId>
+	<artifactId>ServiceRegistory</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>A1Universal-ServiceRegistory</name>
+	<name>Service-Registory</name>
 	<description>Universal Service registory</description>
 	<properties>
 		<java.version>11</java.version>
