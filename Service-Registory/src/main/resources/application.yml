@@ -1,30 +1,39 @@
-spring:
-  application:
-    name: EDUREKA-SERVER
+spring :
+  application :
+    name : serviceregistry
 
-#These configurations will fetch from from config server for now we will go with application.yml only.
-server:
-  port: 8761
-eureka:     #tells about the Eureka server details and its refresh time
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-#  instance:
-#    leaseRenewalIntervalInSeconds: 1
-#    leaseExpirationDurationInSeconds: 2
-#  client:
-#    serviceUrl:
-#      defaultZone: http://127.0.0.1:8761/eureka/
-#    healthcheck:
-#      enabled: true
-#    lease:
-#      duration: 5
+server :
+  port : ${SERVER_PORT:8761}
+  shutdown : graceful
 
-    
-#management:
-#    security:
-#      enabled: false   
-# 
-#logging:
-#    level:
-#      com.java.net: DEBUG
+eureka :
+  client :
+    register-with-eureka : false
+    fetch-registry : false
+
+management :
+  health :
+    livenessstate :
+      enabled : true
+    readinessstate :
+      enabled : true
+  info :
+    env :
+      enabled : true
+  server :
+    add-application-context-header : true
+  endpoints :
+    enabled-by-default : false
+    web :
+      exposure :
+        include : health, prometheus, info
+  endpoint :
+    health :
+      enabled : true
+      show-details : always
+      probes :
+        enabled : true
+    prometheus :
+      enabled : true
+    info :
+      enabled : true
